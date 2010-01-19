@@ -1,5 +1,5 @@
 /*
- * Copyright 2008 Red Hat, Inc.
+ * Copyright 2008,2010 Red Hat, Inc.
  *
  * This Program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,6 +39,9 @@ dump_start(int total, const char *name)
 	printf("VERSION=3\n");
 	if (total > 1) {
 		printf("database=%s\n", name);
+	}
+	if (pflag) {
+		printf("format=print\n");
 	}
 	printf("type=hash\n");
 	printf("HEADER=END\n");
