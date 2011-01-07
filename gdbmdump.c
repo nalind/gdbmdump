@@ -1,5 +1,5 @@
 /*
- * Copyright 2008,2010 Red Hat, Inc.
+ * Copyright 2008,2010,2011 Red Hat, Inc.
  *
  * This Program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -66,8 +66,7 @@ dump_entry(datum key, datum value)
 		putchar(' ');
 		for (i = 0; i < key.dsize; i++) {
 			if (isprint(key.dptr[i]) &&
-			    (key.dptr[i] != ' ') &&
-			    (key.dptr[i] != '\t') &&
+			    !isspace(key.dptr[i]) &&
 			    (key.dptr[i] != '\\')) {
 				putchar(key.dptr[i]);
 			} else {
